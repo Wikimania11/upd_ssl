@@ -19,7 +19,7 @@ yum install -y curl jq tar diff
 
 2. Скачиваем архив в домашнюю директорию пользователя:
 ```
-cd ~
+cd /opt
 git clone https://github.com/Wikimania11/upd_ssl.git
 cd upd_ssl
 ```
@@ -50,7 +50,7 @@ bash -x ./upd_ssl.sh
 
 7. В crontab добавляем задание, где вместо `user1` подставляем реальное имя пользователя.
 ```
-0 2 */3 * * /usr/bin/sudo -u user1 /home/user1/upd_ssl/upd_ssl.sh && nginx -s reload
+0 2 */3 * * /usr/bin/sudo -u user1 /opt/upd_ssl/upd_ssl.sh && nginx -s reload
 ```
 ### Примечания:
 1. Задания `cron` прописываются в файле, который открывается командой `crontab -e`. Чтобы можно было редактировать этот файл в `Midnight Commander`, нужно выполнить комманду `select-editor` и выбрать из списка `/usr/bin/mcedit`.
